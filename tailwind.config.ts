@@ -19,6 +19,11 @@ const config: Config = {
         secondary: "#34A853",
         gray: "#6D6B6B",
       },
+
+      fontFamily: {
+        poppins: ["var(--font-poppins)"],
+        dmSans: ["var(--font-dmSans)"],
+      },
     },
   },
   plugins: [require("@tailwindcss/forms")],

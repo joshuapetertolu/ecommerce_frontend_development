@@ -108,8 +108,8 @@ function LandingNavigation() {
     >
       {({ open }) => (
         <>
-          <div className="mx-auto max-w-7xl px-4 py-5 sm:px-6 lg:px-8">
-            <div className="  flex justify-between items-center">
+          <div>
+            <div className=" flex justify-between items-center">
               <div className="flex md:absolute md:inset-y-0 md:left-0 lg:static">
                 <div className="flex flex-shrink-0 items-center">
                   <a href="#">
