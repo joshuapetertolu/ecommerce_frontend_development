@@ -3,10 +3,14 @@ import { Inter, Poppins, DM_Sans } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
-export const secondaryFont = DM_Sans({ subsets: ["latin"] });
 const poppins = Poppins({
   subsets: ["latin"],
   weight: "300",
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
