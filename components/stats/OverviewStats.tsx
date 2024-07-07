@@ -31,7 +31,7 @@ const stats = [
   },
   {
     id: 4,
-    name: "Payment",
+    name: "Total Payments",
     stat: "236",
     icon: IoCard,
     change: "3.2%",

@@ -119,10 +119,7 @@ export default function Layout({
                         onClick={() => setSidebarOpen(false)}
                       >
                         <span className="sr-only">Close sidebar</span>
-                        <RiMenu3Fill
-                          className="h-6 w-6 text-white"
-                          aria-hidden="true"
-                        />
+                        <RiMenu3Fill className="h-6 w-6" aria-hidden="true" />
                       </button>
                     </div>
                   </TransitionChild>
@@ -130,7 +127,7 @@ export default function Layout({
                   <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6 pb-4">
                     <div className="flex h-16 shrink-0 items-center">
                       <Image
-                        src={"procurement-logo.svg"}
+                        src={"/procurement-logo.svg"}
                         height={50}
                         width={50}
                         alt="Procurement Logo"
