@@ -184,7 +184,7 @@ function LandingNavigation() {
                       <input
                         id="search"
                         name="search"
-                        className="block w-[500px] rounded-md border-0 bg-[#EFEFEF] py-1.5 pl-10 pr-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2= focus:ring-inset focus:ring-[#EFEFEF] sm:text-sm sm:leading-6"
+                        className="block w-[500px] rounded-md border-0 bg-[#EFEFEF] py-1.5 pl-10 pr-3 text-gray-900 placeholder:text-gray-400 focus:ring-[#EFEFEF] focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
                         placeholder="Search for products"
                         type="search"
                       />

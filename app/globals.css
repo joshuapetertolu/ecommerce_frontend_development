@@ -1,6 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* //DEFINE THE CUSTOM DMSANS FONTS  */
+
+:root {
+  --font-family-sans: `${require("typeface-dm-sans").family}`;
+  --font-family-serif: "DM Serif Display", serif;
+}
 /* 
 :root {
   --foreground-rgb: 0, 0, 0;

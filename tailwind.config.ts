@@ -21,8 +21,8 @@ const config: Config = {
       },
 
       fontFamily: {
-        poppins: ["var(--font-poppins)"],
-        dmSans: ["var(--font-dmSans)"],
+        dmSans: ["DM Sans"],
+        poppins: ["Poppins"],
       },
     },
   },
