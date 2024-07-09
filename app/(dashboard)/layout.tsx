@@ -27,19 +27,19 @@ const navigation = [
   { name: "Dashboard", href: "/dashboard", icon: IoHome, current: true },
   {
     name: "Products",
-    href: "/dashboard/products",
+    href: "/products",
     icon: PiPackageLight,
     current: false,
   },
   {
     name: "Orders",
-    href: "/dashboard/orders",
+    href: "/orders",
     icon: SiSalesforce,
     current: false,
   },
   {
     name: "Messages",
-    href: "/dashboard/messages",
+    href: "/messages",
     icon: SiGooglemessages,
     current: false,
   },
