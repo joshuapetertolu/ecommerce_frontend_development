@@ -2,15 +2,14 @@ import type { Metadata } from "next";
 import { Inter, Poppins, DM_Sans } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({
   subsets: ["latin"],
   weight: "300",
 });
 
 const dmSans = DM_Sans({
-  subsets: ["latin"],
   weight: "400",
+  subsets: ["latin-ext"],
 });
 
 export const metadata: Metadata = {
@@ -25,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={poppins.className}>{children}</body>
+      <body className={dmSans.className}>{children}</body>
     </html>
   );
 }

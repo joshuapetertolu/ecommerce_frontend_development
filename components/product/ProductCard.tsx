@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
-
+import { RiDeleteBinLine } from "react-icons/ri";
 import { motion } from "framer-motion";
+import { useState } from "react";
 const products = [
   {
     id: 1,
@@ -52,6 +53,7 @@ const products = [
 ];
 
 export default function ProductCard() {
+  const [hoveredCard, setHoveredCard] = useState(null);
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-7xl overflow-hidden sm:px-6 lg:px-8">
@@ -59,8 +61,10 @@ export default function ProductCard() {
 
         <div className="-mx-px grid gap-4 grid-cols-2 sm:mx-0 md:grid-cols-3 lg:grid-cols-4">
           {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16].map(
-            (item) => (
+            (item: any) => (
               <motion.div
+                onMouseEnter={() => setHoveredCard(item)}
+                onMouseLeave={() => setHoveredCard(null)}
                 key={item}
                 className="group relative border border-[#D6DEEA] shadow-lg p-4 sm:p-6 cursor-pointer hover:shadow-2xl transition duration-300 ease-in-out rounded-lg"
                 initial={{ opacity: 0 }}
@@ -77,6 +81,16 @@ export default function ProductCard() {
                 </div>
 
                 <div className="pb-4 pt-10 text-center">
+                  {/* //only show on hover  */}
+
+                  {hoveredCard === item && (
+                    <div className="p-2 bg-white text-right">
+                      <button className="text-[#656363]">
+                        <RiDeleteBinLine />
+                      </button>
+                    </div>
+                  )}
+
                   <p className=" flex w-full text-right justify-end items-end p-0.5 font-dmSans rounded-lg text-[#D92D20] font-extrabold text-sm ">
                     Out of Stock
                   </p>

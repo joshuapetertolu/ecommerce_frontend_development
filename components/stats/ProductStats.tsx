@@ -1,6 +1,5 @@
 "use client";
 
-import { IoCartSharp } from "react-icons/io5";
 import { motion } from "framer-motion";
 import { GrMoney } from "react-icons/gr";
 import { GiBoxUnpacking } from "react-icons/gi";
@@ -43,10 +42,7 @@ export default function ProductStatsCard() {
             animate={{ opacity: 1 }}
             whileHover={{ scale: 1.05 }}
             key={item.id}
-            className={
-              "relative bg-white py-2 px-4 sm:px-6 shadow rounded-lg overflow-hidden " +
-              item.bgColor
-            }
+            className={`relative py-2 px-4 sm:px-6 shadow rounded-lg overflow-hidden  ${item.bgColor}`}
           >
             <dt>
               <div className="absolute rounded-md p-3">

@@ -15,7 +15,7 @@ function Products() {
 
       <div className="my-10">
         <button
-          onClick={() => push("/dashboard/products/add")}
+          onClick={() => push("/products/add")}
           type="button"
           className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary hover:bg-primary"
         >

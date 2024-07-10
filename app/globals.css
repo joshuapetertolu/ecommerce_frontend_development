@@ -8,6 +8,12 @@
   --font-family-sans: `${require("typeface-dm-sans").family}`;
   --font-family-serif: "DM Serif Display", serif;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+}
+
 /* 
 :root {
   --foreground-rgb: 0, 0, 0;
