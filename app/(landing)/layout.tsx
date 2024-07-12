@@ -1,14 +1,17 @@
-import Image from "next/image";
+import React from "react";
 import LandingNavigation from "@/components/navigations/LandingNavigation";
-import LandingHero from "@/components/hero/LandingHero";
 import FooterNavigation from "@/components/navigations/FooterNavigation";
 
-export default function Home() {
+function LandingPageLayout({ children }: { children: React.ReactNode }) {
   return (
     <main className="mx-auto max-w-7xl px-4 py-5 sm:px-6 lg:px-8">
       <LandingNavigation />
-      <LandingHero />
+
+      {children}
+
       <FooterNavigation />
     </main>
   );
 }
+
+export default LandingPageLayout;

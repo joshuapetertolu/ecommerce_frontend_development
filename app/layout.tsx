@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Poppins, DM_Sans } from "next/font/google";
+import { Poppins, DM_Sans } from "next/font/google";
 import "./globals.css";
 
 const poppins = Poppins({

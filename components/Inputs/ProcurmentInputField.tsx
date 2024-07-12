@@ -12,6 +12,7 @@ interface ProcurmentInputFieldProps {
   name: string;
   id: string;
   required?: boolean;
+  maxLength?: number;
 }
 
 function ProcurmentInputField({
@@ -25,6 +26,7 @@ function ProcurmentInputField({
   type,
   error,
   required,
+  maxLength,
 }: ProcurmentInputFieldProps) {
   return (
     <div className="flex flex-col w-full my-4">
@@ -42,6 +44,7 @@ function ProcurmentInputField({
           className="block w-full rounded-md py-2 text-gray-900 shadow-sm placeholder:text-[#B1B1B1] border border-[#B1B1B1] focus:border-none focus:border-0 sm:text-sm sm:leading-6"
           placeholder={placeholder}
           onBlur={onBlur}
+          maxLength={maxLength}
           onChange={onChange}
           onWheel={() => {
             return false;

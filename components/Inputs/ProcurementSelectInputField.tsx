@@ -3,7 +3,6 @@ import React from "react";
 interface ProcurmentSelectInputFieldProps {
   label: string;
   placeholder: string;
-  type: string;
   data: any[];
   onChange: any;
   onBlur: any;
@@ -23,7 +22,6 @@ export default function ProcurementSelectInputField({
   label,
   onBlur,
   onChange,
-  type,
   error,
   required,
   data,
@@ -44,7 +42,7 @@ export default function ProcurementSelectInputField({
         onChange={onChange}
         className="block w-full rounded-md py-2 text-gray-900 shadow-sm placeholder:text-[#B1B1B1] border border-[#B1B1B1] focus:border-none focus:border-0 sm:text-sm sm:leading-6"
       >
-        <option>{placeholder}</option>
+        <option className="disabled hidden">{placeholder}</option>
         {data.map((item, index) => (
           <option key={index}>{item}</option>
         ))}

@@ -12,7 +12,6 @@ import {
   MenuItem,
 } from "@headlessui/react";
 import { IoIosSearch } from "react-icons/io";
-import { CiBellOn } from "react-icons/ci";
 import { CiUser } from "react-icons/ci";
 import { FaCaretDown } from "react-icons/fa";
 import { RiMenu2Line, RiMenu3Fill } from "react-icons/ri";

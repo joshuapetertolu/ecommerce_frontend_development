@@ -18,6 +18,7 @@ const config: Config = {
         primary: "#2D60FF",
         secondary: "#34A853",
         gray: "#6D6B6B",
+        grayLight: "#828282",
       },
 
       fontFamily: {
