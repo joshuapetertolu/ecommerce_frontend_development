@@ -111,7 +111,7 @@ function LandingNavigation() {
             <div className=" flex justify-between items-center">
               <div className="flex md:absolute md:inset-y-0 md:left-0 lg:static">
                 <div className="flex flex-shrink-0 items-center">
-                  <a href="#">
+                  <a href="/">
                     <Image
                       src="/procurement-logo.svg"
                       width={50}
