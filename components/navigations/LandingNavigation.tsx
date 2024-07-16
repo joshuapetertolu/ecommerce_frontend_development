@@ -16,8 +16,10 @@ import { CiUser } from "react-icons/ci";
 import { FaCaretDown } from "react-icons/fa";
 import { RiMenu2Line, RiMenu3Fill } from "react-icons/ri";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 function LandingNavigation() {
+  const { push } = useRouter();
   const [loggedIn, setLoggedIn] = useState(false);
   const user = {
     name: "Chelsea Hagon",
@@ -44,21 +46,21 @@ function LandingNavigation() {
   const categories = [
     {
       name: "Electronics",
-      href: "#",
+      href: "/category/electronics",
       imageSrc:
         "https://tailwindui.com/img/ecommerce-images/mega-menu-category-01.jpg",
       imageAlt: "Headphones",
     },
     {
       name: "Books",
-      href: "#",
+      href: "/category/books",
       imageSrc:
         "https://tailwindui.com/img/ecommerce-images/mega-menu-category-02.jpg",
       imageAlt: "Books",
     },
     {
       name: "Home & Garden",
-      href: "#",
+      href: "/category/home-and-garden",
       imageSrc:
         "https://tailwindui.com/img/ecommerce-images/mega-menu-category-03.jpg",
       imageAlt:
@@ -66,7 +68,7 @@ function LandingNavigation() {
     },
     {
       name: "Beauty",
-      href: "#",
+      href: "/category/beauty",
       imageSrc:
         "https://tailwindui.com/img/ecommerce-images/mega-menu-category-04.jpg",
       imageAlt:
@@ -74,21 +76,21 @@ function LandingNavigation() {
     },
     {
       name: "Jewelry",
-      href: "#",
+      href: "/category/jewelry",
       imageSrc:
         "https://tailwindui.com/img/ecommerce-images/mega-menu-category-05.jpg",
       imageAlt: "Gold bracelet with emerald and diamond gemstones.",
     },
     {
       name: "Outdoors",
-      href: "#",
+      href: "/category/outdoors",
       imageSrc:
         "https://tailwindui.com/img/ecommerce-images/mega-menu-category-06.jpg",
       imageAlt: "Patagonia Torres del Paine treck",
     },
     {
       name: "Clothing",
-      href: "#",
+      href: "/category/clothing",
       imageSrc:
         "https://tailwindui.com/img/ecommerce-images/mega-menu-category-07.jpg",
       imageAlt: "Model",
@@ -144,15 +146,15 @@ function LandingNavigation() {
                               {categories.map((item) => (
                                 <MenuItem key={item.name}>
                                   {({ active }) => (
-                                    <a
-                                      href={item.href}
+                                    <div
+                                      onClick={() => push(item.href)}
                                       className={classNames(
                                         active ? "bg-gray-100" : "",
-                                        "block px-4 py-2 text-sm text-gray-700"
+                                        "block px-4 py-2 text-sm text-gray-700 cursor-pointer"
                                       )}
                                     >
                                       {item.name}
-                                    </a>
+                                    </div>
                                   )}
                                 </MenuItem>
                               ))}

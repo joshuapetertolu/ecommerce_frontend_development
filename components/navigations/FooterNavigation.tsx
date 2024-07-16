@@ -1,4 +1,8 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
+import QRCode from "react-qr-code";
 
 const navigation = {
   company: [
@@ -8,18 +12,8 @@ const navigation = {
     { name: "Our Blog", href: "#" },
     { name: "Legal & Privacy", href: "#" },
   ],
-  buyer: [
-    { name: "Become a buyer", href: "#" },
-    { name: "Buyer Membership", href: "#" },
-    { name: "Featured Products", href: "#" },
-    { name: "Featured Shops", href: "#" },
-  ],
-  supplier: [
-    { name: "Become a premium Supplier", href: "#" },
-    { name: "Supplier Service Plan", href: "#" },
-    { name: "Key FEatures of Wholesale Store", href: "#" },
-    { name: "The Authentication & Verification service", href: "#" },
-  ],
+  buyer: [{ name: "Become a buyer", href: "#" }],
+  supplier: [{ name: "Become a premium Supplier", href: "#" }],
   legal: [
     { name: "Claim", href: "#" },
     { name: "Privacy", href: "#" },
@@ -92,30 +86,74 @@ const navigation = {
 
 export default function FooterNavigation() {
   return (
-    <footer className="bg-white" aria-labelledby="footer-heading">
-      <h2 id="footer-heading" className="sr-only">
-        Footer
-      </h2>
-      <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
-        <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div className="space-y-8">
-                <div className="relative">
-                  <Image
-                    src="/procurement-logo.svg"
-                    width={50}
-                    height={50}
-                    alt="procurement logo"
-                    className="block h-12 w-auto"
-                  />
-                  <span className="font-bold text-[#170F49] text-2xl absolute top-6 left-8">
-                    Procurenet
-                  </span>
-                </div>
-                {/* <p className="text-sm leading-6 text-gray-600">Self</p> */}
-                <div className="flex space-x-6">
-                  {/* {navigation.social.map((item) => (
+    <div
+      className="mt-40"
+      style={{
+        backgroundImage: "url('/images/download-bg.svg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <section className="flex justify-center flex-col items-center">
+        <p className="text-4xl font-bold text-[#034627] font-dmSans mt-10">
+          Download the app
+        </p>
+
+        <div className="mt-5 border border-black p-6 rounded-xl">
+          <QRCode
+            size={200}
+            style={{ height: "auto" }}
+            value="https://www.google.com"
+            viewBox={`0 0 200 200`}
+          />
+        </div>
+
+        <div className="flex space-x-5">
+          <motion.div whileHover={{ scale: 1.1 }} className="flex space-x-5">
+            <Image
+              width={50}
+              height={50}
+              src="/images/playstore.svg"
+              alt="Google Play download"
+              className="w-40 h-40 cursor-pointer"
+            />
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.1 }} className="flex space-x-5">
+            <Image
+              width={50}
+              height={50}
+              src="/images/playstore.svg"
+              alt="Playstore Download"
+              className="w-40 h-40 cursor-pointer"
+            />
+          </motion.div>
+        </div>
+      </section>
+
+      <footer aria-labelledby="footer-heading">
+        <h2 id="footer-heading" className="sr-only">
+          Footer
+        </h2>
+        <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
+          <div className="xl:grid xl:grid-cols-3 xl:gap-8">
+            <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+              <div className="md:grid md:grid-cols-2 md:gap-8">
+                <div className="space-y-8">
+                  <div className="relative">
+                    <Image
+                      src="/procurement-logo.svg"
+                      width={50}
+                      height={50}
+                      alt="procurement logo"
+                      className="block h-12 w-auto"
+                    />
+                    <span className="font-bold text-[#170F49] text-2xl absolute top-6 left-8">
+                      Procurenet
+                    </span>
+                  </div>
+                  {/* <p className="text-sm leading-6 text-gray-600">Self</p> */}
+                  <div className="flex space-x-6">
+                    {/* {navigation.social.map((item) => (
                     <a
                       key={item.name}
                       href={item.href}
@@ -125,85 +163,86 @@ export default function FooterNavigation() {
                       <item.icon className="h-6 w-6" aria-hidden="true" />
                     </a>
                   ))} */}
+                  </div>
+                </div>
+                <div className="mt-10 md:mt-0">
+                  <h3 className=" text-xl leading-6 text-[#170F49] font-bold">
+                    For Company
+                  </h3>
+                  <ul role="list" className="mt-6 space-y-4">
+                    {navigation.company.map((item) => (
+                      <li key={item.name}>
+                        <a href={item.href} className="text-[#637381] text-sm">
+                          {item.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
-              <div className="mt-10 md:mt-0">
-                <h3 className=" text-xl leading-6 text-[#170F49] font-bold">
-                  For Buyer
-                </h3>
-                <ul role="list" className="mt-6 space-y-4">
-                  {navigation.buyer.map((item) => (
-                    <li key={item.name}>
-                      <a href={item.href} className="text-[#637381] text-sm">
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+
+              <div className="md:grid md:grid-cols-2 md:gap-8">
+                <div>
+                  <h3 className=" text-xl leading-6 text-[#170F49] font-bold">
+                    For Buyer
+                  </h3>
+                  <ul role="list" className="mt-6 space-y-4">
+                    {navigation.buyer.map((item) => (
+                      <li key={item.name}>
+                        <a href={item.href} className="text-[#637381] text-sm">
+                          {item.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="mt-10 md:mt-0">
+                  <h3 className=" text-xl leading-6 text-[#170F49] font-bold">
+                    For Supplier
+                  </h3>
+                  <ul role="list" className="mt-6 space-y-4">
+                    {navigation.supplier.map((item) => (
+                      <li key={item.name}>
+                        <a href={item.href} className="text-[#637381] text-sm">
+                          {item.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
 
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div>
+            {/* //NEWSLETTER STARTS HERE */}
+            <div className="space-y-8">
+              <div className="relative">
                 <h3 className=" text-xl leading-6 text-[#170F49] font-bold">
-                  Company
+                  Newsletter
                 </h3>
-                <ul role="list" className="mt-6 space-y-4">
-                  {navigation.company.map((item) => (
-                    <li key={item.name}>
-                      <a href={item.href} className="text-[#637381] text-sm">
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
               </div>
-              <div className="mt-10 md:mt-0">
-                <h3 className=" text-xl leading-6 text-[#170F49] font-bold">
-                  For Buyer
-                </h3>
-                <ul role="list" className="mt-6 space-y-4">
-                  {navigation.buyer.map((item) => (
-                    <li key={item.name}>
-                      <a href={item.href} className="text-[#637381] text-sm">
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+              <p className="text-[#637381] text-sm">
+                Enter your email to receive latest updates about our products.
+              </p>
+              <div className="flex space-x-6 relative">
+                <input
+                  placeholder="Enter email...."
+                  type="text"
+                  className="w-full py-4 px-2 rounded-md placeholder:text-sm"
+                />
+                <button className="bg-primary top-2 right-3 rounded-md p-2 text-white absolute">
+                  subscribe
+                </button>
               </div>
             </div>
           </div>
-
-          {/* //NEWSLETTER STARTS HERE */}
-          <div className="space-y-8">
-            <div className="relative">
-              <h3 className=" text-xl leading-6 text-[#170F49] font-bold">
-                Newsletter
-              </h3>
-            </div>
-            <p className="text-[#637381] text-sm">
-              Enter your email to receive latest updates about our products.
+          <div className="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
+            <p className=" text-sm leading-5 text-grayLight text-center">
+              Copyright &copy; {new Date().getFullYear()} Procurenet. All Rights
+              Reserved.
             </p>
-            <div className="flex space-x-6 relative">
-              <input
-                placeholder="Enter email...."
-                type="text"
-                className="w-full py-4 px-2 rounded-md placeholder:text-sm"
-              />
-              <button className="bg-primary top-2 right-3 rounded-md p-2 text-white absolute">
-                subscribe
-              </button>
-            </div>
           </div>
         </div>
-        <div className="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
-          <p className=" text-sm leading-5 text-grayLight text-center">
-            Copyright &copy; {new Date().getFullYear()} Procurenet. All Rights
-            Reserved.
-          </p>
-        </div>
-      </div>
-    </footer>
+      </footer>
+    </div>
   );
 }

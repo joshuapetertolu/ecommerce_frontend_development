@@ -33,7 +33,7 @@ function ProcurmentInputField({
       <div>
         <label
           htmlFor={name}
-          className="flex space-x-2 justify-start items-start font-bold font-dmSans leading-6 text-black"
+          className="flex space-x-2 justify-start items-start font-dmSans leading-6 text-black"
         >
           {required && <span className="text-red-600 mr-1">*</span>} {label}
         </label>
