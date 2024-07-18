@@ -4,6 +4,7 @@ import React from "react";
 import ProcurmentInputField from "@/components/Inputs/ProcurmentInputField";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import OrdersTable from "@/components/tables/OrdersTable";
 
 function Orders() {
   return (
@@ -122,6 +123,12 @@ function Orders() {
             </form>
           )}
         </Formik>
+      </section>
+
+      <section className="bg-white  mt-10 rounded-lg p-5">
+        {/* //TABLE STARTS HERE  */}
+
+        <OrdersTable />
       </section>
     </div>
   );
