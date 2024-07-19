@@ -63,6 +63,20 @@ function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
 
+const variants = {
+  hidden: {
+    opacity: 0,
+    x: "-1vw", // Start off-screen to the left
+  },
+  visible: {
+    opacity: 1,
+    x: 0, // Slide in to the center
+    transition: {
+      duration: 1,
+    },
+  },
+};
+
 export default function Layout({
   children, // will be a page or nested layout
 }: {
@@ -306,7 +320,14 @@ export default function Layout({
           </div>
 
           <main className="py-10">
-            <div className="px-4 sm:px-6 lg:px-8 ">{children}</div>
+            <motion.div
+              variants={variants}
+              initial="hidden"
+              animate="visible"
+              className="px-4 sm:px-6 lg:px-8 "
+            >
+              {children}
+            </motion.div>
           </main>
         </div>
       </div>

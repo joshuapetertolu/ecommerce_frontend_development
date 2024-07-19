@@ -3,32 +3,10 @@ import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { FaSortDown } from "react-icons/fa";
 import { motion } from "framer-motion";
 
-const filters = [
-  { name: "All", current: true },
-  { name: "Pending invoice", current: false },
-  { name: "Payment confirmed", current: false },
-  { name: "Delivery in progress", current: false },
-  { name: "Disputes", current: false },
-  { name: "Complete", current: false },
-];
 function OrdersTable() {
   return (
     <div className=" text-[#828282]">
       <div>
-        <div className="grid md:grid-cols-6 grid-cols-2 items-center px-4 py-4 sm:px-6 ">
-          {filters.map((filter) => (
-            <button
-              key={filter.name}
-              className={`${
-                filter.current
-                  ? "text-black font-bold border-b-4 border-[#1B9347]"
-                  : "text-[#828282]"
-              }  px-4 py-2   text-sm font-semibold`}
-            >
-              {filter.name}
-            </button>
-          ))}
-        </div>
         <table className="min-w-full divide-y divide-gray-300">
           <thead className="bg-[#F2F5F8] rounded-md text-center">
             <tr className=" rounded-2xl text-center">
@@ -63,7 +41,11 @@ function OrdersTable() {
           </thead>
           <tbody className="divide-y divide-gray-200 bg-white text-center">
             {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
-              <motion.tr key={item}>
+              <motion.tr
+                whileHover={{ scale: 1.02 }}
+                key={item}
+                className="cursor-pointer "
+              >
                 <td className="w-full max-w-0 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-0">
                   #1234567893
                   <dl className="font-normal lg:hidden">
@@ -94,7 +76,7 @@ function OrdersTable() {
                     </MenuButton>
                     <MenuItems
                       anchor="bottom"
-                      className="bg-white  shadow-2xl z-50 text-[#828282] rounded-lg p-5 flex flex-col space-y-4"
+                      className="bg-white text-sm  shadow-2xl z-50 text-[#828282] rounded-lg p-5 flex flex-col space-y-4"
                     >
                       <MenuItem>
                         <a
@@ -102,6 +84,24 @@ function OrdersTable() {
                           href="#"
                         >
                           Process Inoice
+                        </a>
+                      </MenuItem>
+
+                      <MenuItem>
+                        <a
+                          className="block text-[#828282] hover:text-[#1B9347] font-semibold"
+                          href="#"
+                        >
+                          View Inoice
+                        </a>
+                      </MenuItem>
+
+                      <MenuItem>
+                        <a
+                          className="block text-[#828282] hover:text-[#1B9347] font-semibold"
+                          href="#"
+                        >
+                          Edit Inoice
                         </a>
                       </MenuItem>
                     </MenuItems>

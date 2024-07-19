@@ -6,6 +6,23 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import OrdersTable from "@/components/tables/OrdersTable";
 
+const buyerFilters = [
+  { name: "All", current: true },
+  { name: "Pending invoice", current: false },
+  { name: "Awaiting Deliery", current: false },
+  { name: "Disputes", current: false },
+  { name: "Complete", current: false },
+];
+
+const sellerFilter = [
+  { name: "All", current: true },
+  { name: "Pending invoice", current: false },
+  { name: "Payment confirmed", current: false },
+  { name: "Delivery in progress", current: false },
+  { name: "Disputes", current: false },
+  { name: "Complete", current: false },
+];
+
 function Orders() {
   return (
     <div>
@@ -127,7 +144,20 @@ function Orders() {
 
       <section className="bg-white  mt-10 rounded-lg p-5">
         {/* //TABLE STARTS HERE  */}
-
+        <div className="grid md:grid-cols-6 grid-cols-2 items-center px-4 py-4 sm:px-6 ">
+          {buyerFilters.map((filter) => (
+            <button
+              key={filter.name}
+              className={`${
+                filter.current
+                  ? "text-black font-bold w-6 w-auto border-b-4 border-[#1B9347]"
+                  : "text-[#828282]"
+              }  px-4 py-2   text-sm font-semibold`}
+            >
+              {filter.name}
+            </button>
+          ))}
+        </div>
         <OrdersTable />
       </section>
     </div>
