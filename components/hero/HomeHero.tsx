@@ -3,9 +3,8 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import ModalLayout from "../layouts/ModalLayout";
 
-function LandingHero() {
+function HomeHero() {
   return (
     <section>
       <div className="container relative mx-auto">
@@ -24,38 +23,30 @@ function LandingHero() {
         <div className="grid grid-cols-1 md:grid-cols-2 items-center h-[90vh]">
           <div className="flex flex-col justify-center">
             <h1 className="md:text-5xl text-2xl font-extrabold text-[#1F1F1F] font-dmSans">
-              Join procurenet and sell out your products to verified businesses
+              Procurement platform for all food businesses{" "}
             </h1>
             <p className="text-sm md:text-xl text-[#1F1F1F] mt-4">
               The ultimate solution for hotels and restaurants to simplify their
               purchasing processes. Discover, order and manage supplies
-              effortlessly, all within one seamless platform.{" "}
+              effortlessly, all within one seamless platform.
             </p>
 
-            <div className="flex space-x-5">
+            <div className="flex space-x-5 my-10">
               <motion.div
                 whileHover={{ scale: 1.1 }}
                 className="flex space-x-5"
               >
-                <Image
-                  width={50}
-                  height={50}
-                  src="/images/iphone.svg"
-                  alt="Google Play download"
-                  className="w-40 h-40 cursor-pointer"
-                />
+                <button className="cursor-pointer py-5 px-3 md:px-10 bg-[#34A853] text-white rounded-lg">
+                  For Suppliers
+                </button>
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.1 }}
                 className="flex space-x-5"
               >
-                <Image
-                  width={50}
-                  height={50}
-                  src="/images/playstore.svg"
-                  alt="Playstore Download"
-                  className="w-40 h-40 cursor-pointer"
-                />
+                <button className="cursor-pointer  py-5 px-3  bg-[#4285F4] text-white rounded-lg">
+                  For Businesses
+                </button>
               </motion.div>
             </div>
           </div>
@@ -65,7 +56,7 @@ function LandingHero() {
             <Image
               width={1200}
               height={1200}
-              src="/images/farmer.png"
+              src="/images/homeimg.png"
               alt="procurement"
               // className="w-8 h-80"
             />
@@ -98,18 +89,8 @@ function LandingHero() {
           <Image src="/images/polygon.svg" height={100} width={100} alt="" />
         </motion.div>
       </div>
-
-      {/* //LOGIN MODAL STARTS HERE  */}
-
-      <ModalLayout
-        open={true}
-        setOpen={() => console.log("memememem")}
-        title={""}
-      >
-        <div>LOGIN HEHEHEH</div>
-      </ModalLayout>
     </section>
   );
 }
 
-export default LandingHero;
+export default HomeHero;

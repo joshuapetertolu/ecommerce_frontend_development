@@ -5,15 +5,20 @@ import { motion } from "framer-motion";
 import QRCode from "react-qr-code";
 
 const navigation = {
-  company: [
-    { name: "About Us", href: "#" },
-    { name: "Contact Us", href: "#" },
-    { name: "Careers", href: "#" },
-    { name: "Our Blog", href: "#" },
-    { name: "Legal & Privacy", href: "#" },
+  product: [
+    { name: "Features", href: "#" },
+    { name: "Updates", href: "#" },
+    { name: "Reviews", href: "#" },
+    { name: "Updates", href: "#" },
   ],
-  buyer: [{ name: "Become a buyer", href: "#" }],
-  supplier: [{ name: "Become a premium Supplier", href: "#" }],
+  company: [
+    { name: "About", href: "#" },
+    { name: "Contact us", href: "#" },
+    { name: "Careers", href: "#" },
+    { name: "Culture", href: "#" },
+    { name: "Blog", href: "#" },
+  ],
+  support: [{ name: "Become a premium Supplier", href: "#" }],
   legal: [
     { name: "Claim", href: "#" },
     { name: "Privacy", href: "#" },
@@ -87,7 +92,7 @@ const navigation = {
 export default function FooterNavigation() {
   return (
     <div
-      className="mt-40"
+      className="mt-20"
       style={{
         backgroundImage: "url('/images/download-bg.svg')",
         backgroundSize: "cover",
@@ -113,7 +118,7 @@ export default function FooterNavigation() {
             <Image
               width={50}
               height={50}
-              src="/images/playstore.svg"
+              src="/images/iphone.svg"
               alt="Google Play download"
               className="w-40 h-40 cursor-pointer"
             />
@@ -167,10 +172,10 @@ export default function FooterNavigation() {
                 </div>
                 <div className="mt-10 md:mt-0">
                   <h3 className=" text-xl leading-6 text-[#170F49] font-bold">
-                    For Company
+                    Product{" "}
                   </h3>
                   <ul role="list" className="mt-6 space-y-4">
-                    {navigation.company.map((item) => (
+                    {navigation.product.map((item) => (
                       <li key={item.name}>
                         <a href={item.href} className="text-[#637381] text-sm">
                           {item.name}
@@ -184,10 +189,10 @@ export default function FooterNavigation() {
               <div className="md:grid md:grid-cols-2 md:gap-8">
                 <div>
                   <h3 className=" text-xl leading-6 text-[#170F49] font-bold">
-                    For Buyer
+                    Company
                   </h3>
                   <ul role="list" className="mt-6 space-y-4">
-                    {navigation.buyer.map((item) => (
+                    {navigation.company.map((item) => (
                       <li key={item.name}>
                         <a href={item.href} className="text-[#637381] text-sm">
                           {item.name}
@@ -198,10 +203,10 @@ export default function FooterNavigation() {
                 </div>
                 <div className="mt-10 md:mt-0">
                   <h3 className=" text-xl leading-6 text-[#170F49] font-bold">
-                    For Supplier
+                    Support
                   </h3>
                   <ul role="list" className="mt-6 space-y-4">
-                    {navigation.supplier.map((item) => (
+                    {navigation.support.map((item) => (
                       <li key={item.name}>
                         <a href={item.href} className="text-[#637381] text-sm">
                           {item.name}

@@ -150,7 +150,7 @@ function Orders() {
               key={filter.name}
               className={`${
                 filter.current
-                  ? "text-black font-bold w-6 w-auto border-b-4 border-[#1B9347]"
+                  ? "text-black font-bold w-6  border-b-4 border-[#1B9347]"
                   : "text-[#828282]"
               }  px-4 py-2   text-sm font-semibold`}
             >

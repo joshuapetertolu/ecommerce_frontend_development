@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
+import { Menu, MenuItems, MenuItem, MenuButton } from "@headlessui/react";
 import { FaSortDown } from "react-icons/fa";
 import { motion } from "framer-motion";
 
