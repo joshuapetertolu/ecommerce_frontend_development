@@ -6,7 +6,7 @@ import LandingHero from "@/components/hero/LandingHero";
 import FooterNavigation from "@/components/navigations/FooterNavigation";
 import { motion } from "framer-motion";
 
-export default function Home() {
+export default function Supplier() {
   const options = [
     {
       title: "Secure platform",
