@@ -17,10 +17,12 @@ import { FaCaretDown } from "react-icons/fa";
 import { RiMenu2Line, RiMenu3Fill } from "react-icons/ri";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import LoginModal from "../modals/LoginModal";
 
 function LandingNavigation() {
   const { push } = useRouter();
   const [loggedIn, setLoggedIn] = useState(false);
+  const [loginUser, setLoginUser] = useState(false);
   const user = {
     name: "Chelsea Hagon",
     email: "chelsea.hagon@example.com",
@@ -109,6 +111,13 @@ function LandingNavigation() {
     >
       {({ open }) => (
         <>
+          <div className="z-50">
+            <LoginModal
+              show={loginUser}
+              close={() => setLoginUser(!loginUser)}
+            />
+          </div>
+
           <div>
             <div className=" flex justify-between items-center">
               <div className="flex md:absolute md:inset-y-0 md:left-0 lg:static">
@@ -163,7 +172,12 @@ function LandingNavigation() {
                         </Menu>
                       </span>
                     </div>
-                    <p className="">For Suppliers</p>
+                    <p
+                      onClick={() => push("/suppliers")}
+                      className="cursor-pointer"
+                    >
+                      For Suppliers
+                    </p>
                   </div>
                 </div>
               </div>
@@ -210,7 +224,10 @@ function LandingNavigation() {
                   )}
                 </PopoverButton>
               </div>
-              <div className=" hidden lg:flex lg:items-center lg:justify-end xl:col-span-4">
+              <div
+                onClick={() => setLoginUser(true)}
+                className=" hidden cursor-pointer lg:flex lg:items-center lg:justify-end xl:col-span-4"
+              >
                 {/* Profile dropdown */}
                 <div className="flex items-center lg:ml-8 space-x-4 ">
                   <CiUser

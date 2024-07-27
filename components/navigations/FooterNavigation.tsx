@@ -5,20 +5,15 @@ import { motion } from "framer-motion";
 import QRCode from "react-qr-code";
 
 const navigation = {
-  product: [
-    { name: "Features", href: "#" },
-    { name: "Updates", href: "#" },
-    { name: "Reviews", href: "#" },
-    { name: "Updates", href: "#" },
-  ],
   company: [
-    { name: "About", href: "#" },
-    { name: "Contact us", href: "#" },
+    { name: "About Us", href: "#" },
+    { name: "Contact Us", href: "#" },
     { name: "Careers", href: "#" },
-    { name: "Culture", href: "#" },
-    { name: "Blog", href: "#" },
+    { name: "Our Blog", href: "#" },
+    { name: "Legal & Privacy", href: "#" },
   ],
-  support: [{ name: "Become a premium Supplier", href: "#" }],
+  buyer: [{ name: "Become a buyer", href: "#" }],
+  supplier: [{ name: "Become a premium Supplier", href: "#" }],
   legal: [
     { name: "Claim", href: "#" },
     { name: "Privacy", href: "#" },
@@ -92,7 +87,7 @@ const navigation = {
 export default function FooterNavigation() {
   return (
     <div
-      className="mt-20"
+      className="mt-40"
       style={{
         backgroundImage: "url('/images/download-bg.svg')",
         backgroundSize: "cover",
@@ -172,10 +167,10 @@ export default function FooterNavigation() {
                 </div>
                 <div className="mt-10 md:mt-0">
                   <h3 className=" text-xl leading-6 text-[#170F49] font-bold">
-                    Product{" "}
+                    For Company
                   </h3>
                   <ul role="list" className="mt-6 space-y-4">
-                    {navigation.product.map((item) => (
+                    {navigation.company.map((item) => (
                       <li key={item.name}>
                         <a href={item.href} className="text-[#637381] text-sm">
                           {item.name}
@@ -189,10 +184,10 @@ export default function FooterNavigation() {
               <div className="md:grid md:grid-cols-2 md:gap-8">
                 <div>
                   <h3 className=" text-xl leading-6 text-[#170F49] font-bold">
-                    Company
+                    For Buyer
                   </h3>
                   <ul role="list" className="mt-6 space-y-4">
-                    {navigation.company.map((item) => (
+                    {navigation.buyer.map((item) => (
                       <li key={item.name}>
                         <a href={item.href} className="text-[#637381] text-sm">
                           {item.name}
@@ -203,10 +198,10 @@ export default function FooterNavigation() {
                 </div>
                 <div className="mt-10 md:mt-0">
                   <h3 className=" text-xl leading-6 text-[#170F49] font-bold">
-                    Support
+                    For Supplier
                   </h3>
                   <ul role="list" className="mt-6 space-y-4">
-                    {navigation.support.map((item) => (
+                    {navigation.supplier.map((item) => (
                       <li key={item.name}>
                         <a href={item.href} className="text-[#637381] text-sm">
                           {item.name}
