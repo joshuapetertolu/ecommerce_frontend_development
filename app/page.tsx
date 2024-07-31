@@ -7,7 +7,8 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import ProductListCard from "@/components/product/ProductListCard";
 import ReactPlayer from "react-player/youtube";
-
+import HomeCarouselHero from "@/components/hero/HomeCarouselHero";
+import SponsoredProduct from "@/components/product/SponsoredProduct";
 export default function Home() {
   const { push } = useRouter();
 
@@ -26,6 +27,16 @@ export default function Home() {
       <div className="overflow-x-hidden ">
         <main className="mx-auto max-w-7xl px-4 py-5 sm:px-6 lg:px-8 ">
           <LandingNavigation />
+
+          <div className="w-full my-5 md:space-x-5  flex flex-col md:flex-row">
+            <div className="md:w-9/12 w-full">
+              <HomeCarouselHero />
+            </div>
+
+            <div className="md:w-3/12 md:mt-0 mt-5">
+              <SponsoredProduct title="SPONSORED" />
+            </div>
+          </div>
 
           <div>
             <h2 className="font-bold my-10 font-dmSans text-xl">
@@ -46,7 +57,7 @@ export default function Home() {
                 // height="700px"
                 // width="300px"
                 pip={true}
-                url="https://www.youtube.com/watch?v=LXb3EKWsInQ"
+                url="https://www.youtube.com/watch?v=rkJrFl9g-iY"
               />
             </div>
 
@@ -93,19 +104,14 @@ export default function Home() {
               style={{}}
             />
           </div>
-
-          {/* <div className="text-white">
-            <h3 className="text-2xl md:text-4xl font-bold font-dmSans text-[#034627] mb-5">
-              Get products at the <br /> cheapest price possible{" "}
-            </h3>
-            <p className="font-poppins">
-              Say hello to effortless procurement on the go as we bring the
-              power of PROCURENET right to your fingertips. Manage your
-              procurement needs anytime, anywhere with our intuitive and
-              user-friendly mobile app.
-            </p>
-          </div> */}
         </motion.section>
+
+        {/* <New Section */}
+        <section className="mx-auto max-w-7xl px-4 py-5 sm:px-6 lg:px-8 grid md:grid-cols-3 grid-cols-1 md:gap-10 gap-5 ">
+          <SponsoredProduct title="OILS" />
+          <SponsoredProduct title="SPICES" />
+          <SponsoredProduct title="PROCESSED GOODS" />
+        </section>
 
         {/* //PRODUCT FEATURES STARTS HERE  */}
 
