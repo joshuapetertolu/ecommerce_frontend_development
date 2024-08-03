@@ -22,11 +22,79 @@ export default function Home() {
     },
   ];
 
+  const navigations = [
+    {
+      id: 1,
+      name: "Diary",
+      Image: "/images/diary.svg",
+    },
+    {
+      id: 2,
+      name: "Sea food",
+      Image: "/images/diary.svg",
+    },
+    {
+      id: 3,
+      name: "Meat",
+      Image: "/images/diary.svg",
+    },
+    {
+      id: 4,
+      name: "Fruits and vegetable",
+      Image: "/images/diary.svg",
+    },
+    {
+      id: 5,
+      name: "Poultry",
+      Image: "/images/diary.svg",
+    },
+    {
+      id: 6,
+      name: "Processed foods",
+      Image: "/images/diary.svg",
+    },
+    {
+      id: 7,
+      name: "Oil",
+      Image: "/images/diary.svg",
+    },
+    {
+      id: 8,
+      name: "Spice",
+      Image: "/images/diary.svg",
+    },
+    // {
+    //   id: 8,
+    //   name: "View all",
+    //   Image: "/images/diary.svg",
+    // },
+  ];
+
   return (
     <>
       <div className="overflow-x-hidden ">
         <main className="mx-auto max-w-7xl px-4 py-5 sm:px-6 lg:px-8 ">
           <LandingNavigation />
+
+          <section className="my-5 mb-10">
+            <div className="flex justify-between items-center">
+              {navigations?.map((item) => (
+                <div
+                  onClick={() => push("/category/" + item.name?.toLowerCase())}
+                  key={item.id}
+                  className="flex justify-center space-x-3 cursor-pointer"
+                >
+                  <Image
+                    src={`${item.Image}`}
+                    height={20}
+                    width={20}
+                    alt={item.name}
+                  />
+                  <p className="text-[#6D6B6B] text-sm">{item.name}</p>
+                </div>
+              ))}
+            </div>
+          </section>
 
           <div className="w-full my-5 md:space-x-5  flex flex-col md:flex-row">
             <div className="md:w-9/12 w-full">

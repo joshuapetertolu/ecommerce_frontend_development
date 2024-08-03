@@ -2,17 +2,22 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import ProductModal from "../modals/ProductModal";
 import { useState } from "react";
 
 export default function ProductListCard() {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <div className="bg-white">
+      <ProductModal show={showModal} close={() => setShowModal(false)} />
       <div className="mx-auto max-w-7xl overflow-hidden sm:px-6 lg:px-8">
         <div className=" grid gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-6 justify-center items-center">
           {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16].map(
             (item: any) => (
               <motion.div
                 key={item}
+                onClick={() => setShowModal(true)}
                 className="group relative  cursor-pointer  transition duration-300 ease-in-out rounded-lg"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}

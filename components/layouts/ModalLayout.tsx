@@ -7,12 +7,14 @@ interface ModalLayoutProps {
   close: any;
   children: any;
   closeOnOutsideClick?: boolean;
+  maxWidth?: string;
 }
 const ModalLayout = ({
   show,
   closeOnOutsideClick = true,
   children,
   close,
+  maxWidth = "max-w-2xl",
 }: ModalLayoutProps) => {
   let [isOpen, setIsOpen] = useState(true);
   return (
@@ -54,7 +56,11 @@ const ModalLayout = ({
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              <div className="relative inline-block bg-white rounded-lg text-center overflow-hidden shadow-xl transform transition-all my-4 align-middle max-w-3xl w-full">
+              <div
+                className={`relative inline-block bg-white rounded-lg text-center overflow-hidden shadow-xl transform transition-all my-4 align-middle ${
+                  maxWidth ? maxWidth : "max-w-3xl"
+                } w-full`}
+              >
                 <div className="sm:px-2 sm:flex sm:flex-row absolute right-2 my-5">
                   <FaTimes
                     className="cursor-pointer text-[#5B2E4F]"

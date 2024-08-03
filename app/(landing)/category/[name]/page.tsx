@@ -7,7 +7,6 @@ import { useParams } from "next/navigation";
 function ProductCategory() {
   const params = useParams<any>();
 
-  console.log(params, "yeyye");
   return (
     <section className="my-10">
       <h2 className="text-2xl capitalize font-bold font-dmSans mb-5 mt-20">
