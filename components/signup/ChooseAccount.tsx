@@ -4,11 +4,8 @@ import React, { useEffect, useState } from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import Image from "next/image";
-import ChooseAccount from "@/components/signup/ChooseAccount";
-import BuyerSignup from "@/components/signup/BuyerSignUp";
-import 
 
-function Signup() {
+function ChooseAccount() {
   return (
     <div className="flex justify-center items-center flex-col flex-1 mt-20 border border-white p-5 md:p-20 rounded-xl shadow-lg">
       <div className="md:w-[600px] w-full justify-center items-center text-center">
@@ -16,7 +13,7 @@ function Signup() {
           Create an account{" "}
         </h2>
         <p className="text-sm text-grayLight mt-3 mb-10">
-          Signup to procurenet to get started{" "}
+          ChooseAccount to procurenet to get started{" "}
         </p>
 
         <Formik
@@ -82,4 +79,4 @@ function Signup() {
   );
 }
 
-export default Signup;
+export default ChooseAccount;
