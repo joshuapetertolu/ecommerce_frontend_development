@@ -27,10 +27,10 @@ export default function ProcurementSelectInputField({
   data,
 }: ProcurmentSelectInputFieldProps) {
   return (
-    <div>
+    <div className="flex flex-col w-full my-2">
       <label
         htmlFor={name}
-        className="flex space-x-2 justify-start items-start font-bold font-dmSans leading-6 text-black"
+        className="flex space-x-2 justify-start items-start font-dmSans leading-6 text-black"
       >
         {required && <span className="text-red-600 mr-1">*</span>}
         {label}
@@ -50,7 +50,7 @@ export default function ProcurementSelectInputField({
 
       <div>
         {touched && error && (
-          <p className="mt-1 text-xs text-red-500">{error}</p>
+          <p className="mt-1 text-xs text-start text-red-500">{error}</p>
         )}
       </div>
     </div>

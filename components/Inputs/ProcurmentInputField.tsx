@@ -29,7 +29,7 @@ function ProcurmentInputField({
   maxLength,
 }: ProcurmentInputFieldProps) {
   return (
-    <div className="flex flex-col w-full my-4">
+    <div className="flex flex-col w-full my-2">
       <div>
         <label
           htmlFor={name}
@@ -54,7 +54,7 @@ function ProcurmentInputField({
 
       <div>
         {touched && error && (
-          <p className="mt-1 text-xs text-red-500">{error}</p>
+          <p className="mt-1 text-xs text-start text-red-500">{error}</p>
         )}
       </div>
     </div>

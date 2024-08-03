@@ -8,16 +8,6 @@ import * as Yup from "yup";
 import { states } from "@/utils/constants/constants";
 
 function SupplierSignup() {
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  if (!isMounted) {
-    return null; // Prevent rendering on the server
-  }
-
   return (
     <div className="flex justify-center items-center flex-col flex-1 mt-20 border border-white p-5 md:p-20 rounded-xl shadow-lg">
       <div className="md:w-[600px] w-full justify-center items-center text-center">
@@ -65,95 +55,161 @@ function SupplierSignup() {
             handleBlur,
             handleSubmit,
           }) => (
-            <form onSubmit={handleSubmit}>
-              <div className="flex flex-col md:flex-row md:gap-5">
-                <ProcurmentInputField
-                  label="Business Name"
-                  placeholder="Enter your business name"
-                  id="businessName"
-                  name="businessName"
-                  type="text"
-                  value={values.businessName}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  error={errors.businessName}
-                  touched={touched.businessName}
-                  required
-                />
-                <ProcurmentInputField
-                  label="Email"
-                  placeholder="Enter your email"
-                  id="email"
-                  name="email"
-                  type="email"
-                  value={values.email}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  error={errors.email}
-                  touched={touched.email}
-                  required
-                />
-              </div>
+            <form
+              onSubmit={handleSubmit}
+              className="flex justify-start items-start flex-col w-full"
+            >
+              <ProcurmentInputField
+                label="Business Name"
+                placeholder="Enter your business name"
+                id="businessName"
+                name="businessName"
+                type="text"
+                value={values.businessName}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={errors.businessName}
+                touched={touched.businessName}
+                required
+              />
+              <ProcurmentInputField
+                label="Email"
+                placeholder="Enter your email"
+                id="email"
+                name="email"
+                type="email"
+                value={values.email}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={errors.email}
+                touched={touched.email}
+                required
+              />
 
-              <div className="flex flex-col md:flex-row md:gap-5">
-                <ProcurmentInputField
-                  label="First Name"
-                  placeholder="Enter your first name"
-                  id="firstName"
-                  name="firstName"
-                  type="text"
-                  value={values.firstName}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  error={errors.firstName}
-                  touched={touched.firstName}
-                  required
-                />
-                <ProcurmentInputField
-                  label="Last Name"
-                  placeholder="Enter your last name"
-                  id="lastName"
-                  name="lastName"
-                  type="text"
-                  value={values.lastName}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  error={errors.lastName}
-                  touched={touched.lastName}
-                  required
-                />
-              </div>
+              <ProcurmentInputField
+                label="Phone "
+                placeholder="Enter your phone number"
+                id="businessName"
+                name="businessName"
+                type="text"
+                value={values.businessName}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={errors.businessName}
+                touched={touched.businessName}
+                required
+              />
+              <ProcurementSelectInputField
+                label="State"
+                data={states}
+                placeholder="Select State"
+                id="email"
+                name="email"
+                value={values.email}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={errors.email}
+                touched={touched.email}
+                required
+              />
 
-              <div className="flex flex-col md:flex-row md:gap-5">
-                <ProcurmentInputField
-                  label="Phone"
-                  placeholder="Enter your phone number"
-                  id="phoneNumber"
-                  name="phoneNumber"
-                  type="text"
-                  maxLength={11}
-                  value={values.phoneNumber}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  error={errors.phoneNumber}
-                  touched={touched.phoneNumber}
-                  required
-                />
+              <ProcurmentInputField
+                label="City"
+                placeholder="Enter your phone number"
+                id="businessName"
+                name="businessName"
+                type="text"
+                value={values.businessName}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={errors.businessName}
+                touched={touched.businessName}
+                required
+              />
 
-                <ProcurmentInputField
-                  label="Password"
-                  placeholder="Enter your password"
-                  id="password"
-                  name="password"
-                  type="password"
-                  value={values.password}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  error={errors.password}
-                  touched={touched.password}
-                  required
-                />
-              </div>
+              <ProcurmentInputField
+                label="First Name"
+                placeholder="Enter your first name"
+                id="firstName"
+                name="firstName"
+                type="text"
+                value={values.firstName}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={errors.firstName}
+                touched={touched.firstName}
+                required
+              />
+              <ProcurmentInputField
+                label="Last Name"
+                placeholder="Enter your last name"
+                id="lastName"
+                name="lastName"
+                type="text"
+                value={values.lastName}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={errors.lastName}
+                touched={touched.lastName}
+                required
+              />
+
+              <ProcurmentInputField
+                label=" NIN"
+                placeholder="Tell us about your business"
+                id="phoneNumber"
+                name="phoneNumber"
+                type="text"
+                maxLength={11}
+                value={values.phoneNumber}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={errors.phoneNumber}
+                touched={touched.phoneNumber}
+                required
+              />
+
+              <ProcurementSelectInputField
+                label="Is your business CAC registered "
+                data={["Yes", "No"]}
+                placeholder="Select"
+                id="email"
+                name="email"
+                value={values.email}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={errors.email}
+                touched={touched.email}
+                required
+              />
+
+              <ProcurementSelectInputField
+                label="Select product categories you are interested in"
+                data={states}
+                placeholder="Select"
+                id="email"
+                name="email"
+                value={values.email}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={errors.email}
+                touched={touched.email}
+                required
+              />
+
+              <ProcurmentInputField
+                label="Password"
+                placeholder="Enter your password"
+                id="password"
+                name="password"
+                type="password"
+                value={values.password}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={errors.password}
+                touched={touched.password}
+                required
+              />
 
               <div>
                 <input type="checkbox" className="mr-5" />

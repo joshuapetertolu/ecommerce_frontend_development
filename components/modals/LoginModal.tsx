@@ -1,15 +1,15 @@
 import React from "react";
 import ModalLayout from "../layouts/ModalLayout";
-import Image from "next/image";
-import { VscSend } from "react-icons/vsc";
 import ProcurmentInputField from "../Inputs/ProcurmentInputField";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import { useRouter } from "next/navigation";
 interface LoginModalProps {
   show: boolean;
   close: () => void;
 }
 function LoginModal({ show, close }: LoginModalProps) {
+  const { push } = useRouter();
   return (
     <ModalLayout show={show} close={close}>
       <div className="h-[400px] md:p-10">
@@ -88,7 +88,10 @@ function LoginModal({ show, close }: LoginModalProps) {
             <p className="text-center text-gray cursor-pointer">
               Forgot password?
             </p>
-            <p className="text-center text-secondary cursor-pointer ">
+            <p
+              onClick={() => push("/sign-up")}
+              className="text-center text-secondary cursor-pointer "
+            >
               Create an Account
             </p>
           </div>

@@ -5,7 +5,10 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import Image from "next/image";
 
-function ChooseAccount() {
+interface ChooseAccountProps {
+  setStep: React.Dispatch<React.SetStateAction<number>>;
+}
+function ChooseAccount({ setStep }: ChooseAccountProps) {
   return (
     <div className="flex justify-center items-center flex-col flex-1 mt-20 border border-white p-5 md:p-20 rounded-xl shadow-lg">
       <div className="md:w-[600px] w-full justify-center items-center text-center">
@@ -13,37 +16,23 @@ function ChooseAccount() {
           Create an account{" "}
         </h2>
         <p className="text-sm text-grayLight mt-3 mb-10">
-          ChooseAccount to procurenet to get started{" "}
+          Signup to procurenet to get started{" "}
         </p>
 
         <Formik
-          initialValues={{
-            email: "",
-            businessName: "",
-            firstName: "",
-            lastName: "",
-            state: "",
-            city: "",
-            phoneNumber: "",
-            password: "",
-            confirmPassword: "",
-          }}
+          initialValues={{}}
           validationSchema={Yup.object().shape({})}
           onSubmit={(values) => {
             console.log(values);
           }}
         >
-          {({
-            values,
-            errors,
-            touched,
-            handleChange,
-            handleBlur,
-            handleSubmit,
-          }) => (
+          {({ handleSubmit }) => (
             <form onSubmit={handleSubmit}>
               <div className="flex cursor-pointer flex-col md:space-x-5 space-y-5 md:space-y-0 md:flex-row md:gap-5">
-                <div className="flex justify-between items-center px-10 py-3 font-extrabold border rounded-md bg-[#F8E9FF] text-[#8959A0] w-full">
+                <div
+                  onClick={() => setStep(2)}
+                  className="flex justify-between items-center px-10 py-3 font-extrabold border rounded-md bg-[#F8E9FF] text-[#8959A0] w-full"
+                >
                   <Image
                     width={20}
                     height={20}
@@ -53,7 +42,10 @@ function ChooseAccount() {
                   <p> I am a buyer</p>
                 </div>
 
-                <div className="flex cursor-pointer justify-between items-center px-10 py-3 font-extrabold border rounded-md bg-[#FFEEEE] text-[#B58585] w-full">
+                <div
+                  onClick={() => setStep(3)}
+                  className="flex cursor-pointer justify-between items-center px-10 py-3 font-extrabold border rounded-md bg-[#FFEEEE] text-[#B58585] w-full"
+                >
                   <Image
                     width={20}
                     height={20}
