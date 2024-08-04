@@ -63,11 +63,6 @@ export default function Home() {
       name: "Spice",
       Image: "/images/diary.svg",
     },
-    // {
-    //   id: 8,
-    //   name: "View all",
-    //   Image: "/images/diary.svg",
-    // },
   ];
 
   return (

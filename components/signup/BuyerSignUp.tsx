@@ -155,13 +155,6 @@ function BuyerSignup() {
                 />
               </div>
 
-              <div>
-                <input type="checkbox" className="mr-5" />
-                <span className="text-xs text-grayLight">
-                  I have read and agree to Procurement's of Use and Privacy
-                  policy .
-                </span>
-              </div>
               <button
                 type="submit"
                 className="w-full mt-10 bg-primary py-2 rounded-md text-white font-dmSans font-bold text-lg "
