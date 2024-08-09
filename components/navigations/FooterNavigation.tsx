@@ -94,61 +94,26 @@ export default function FooterNavigation() {
         backgroundPosition: "center",
       }}
     >
-      <section className="flex justify-center flex-col items-center">
-        <p className="text-4xl font-bold text-[#034627] font-dmSans mt-10">
-          Download the app
-        </p>
-
-        <div className="mt-5 border border-black p-6 rounded-xl">
-          <QRCode
-            size={200}
-            style={{ height: "auto" }}
-            value="https://www.google.com"
-            viewBox={`0 0 200 200`}
-          />
-        </div>
-
-        <div className="flex space-x-5">
-          <motion.div whileHover={{ scale: 1.1 }} className="flex space-x-5">
-            <Image
-              width={50}
-              height={50}
-              src="/images/iphone.svg"
-              alt="Google Play download"
-              className="w-40 h-40 cursor-pointer"
-            />
-          </motion.div>
-          <motion.div whileHover={{ scale: 1.1 }} className="flex space-x-5">
-            <Image
-              width={50}
-              height={50}
-              src="/images/playstore.svg"
-              alt="Playstore Download"
-              className="w-40 h-40 cursor-pointer"
-            />
-          </motion.div>
-        </div>
-      </section>
 
       <footer aria-labelledby="footer-heading">
         <h2 id="footer-heading" className="sr-only">
           Footer
         </h2>
-        <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
+        <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-2">
           <div className="xl:grid xl:grid-cols-3 xl:gap-8">
             <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
               <div className="md:grid md:grid-cols-2 md:gap-8">
                 <div className="space-y-8">
                   <div className="relative">
                     <Image
-                      src="/procurement-logo.svg"
+                      src="/Phonix-logo.svg"
                       width={50}
                       height={50}
-                      alt="procurement logo"
+                      alt="Phonix logo"
                       className="block h-12 w-auto"
                     />
                     <span className="font-bold text-[#170F49] text-2xl absolute top-6 left-8">
-                      Procurenet
+                      honix
                     </span>
                   </div>
                   {/* <p className="text-sm leading-6 text-gray-600">Self</p> */}

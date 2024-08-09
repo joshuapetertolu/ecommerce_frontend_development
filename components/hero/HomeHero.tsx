@@ -23,7 +23,7 @@ function HomeHero() {
         <div className="grid grid-cols-1 md:grid-cols-2 items-center h-[90vh]">
           <div className="flex flex-col justify-center">
             <h1 className="md:text-5xl text-2xl font-extrabold text-[#1F1F1F] font-dmSans">
-              Procurement platform for all food businesses{" "}
+              Phonix platform for all food businesses{" "}
             </h1>
             <p className="text-sm md:text-xl text-[#1F1F1F] mt-4">
               The ultimate solution for hotels and restaurants to simplify their
@@ -36,9 +36,7 @@ function HomeHero() {
                 whileHover={{ scale: 1.1 }}
                 className="flex space-x-5"
               >
-                <button className="cursor-pointer py-5 px-3 md:px-10 bg-[#34A853] text-white rounded-lg">
-                  For Suppliers
-                </button>
+            
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.1 }}
@@ -57,7 +55,7 @@ function HomeHero() {
               width={1200}
               height={1200}
               src="/images/homeimg.png"
-              alt="procurement"
+              alt="Phonix"
               // className="w-8 h-80"
             />
           </div>

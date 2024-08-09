@@ -23,11 +23,10 @@ export const responsive = {
 };
 
 const sliderImages = [
-  "/images/hero2.png",
-  "/images/hero1.svg",
-  "/images/hero3.svg",
-  "/images/hero4.svg",
-  "/images/hero5.svg",
+  "/images/phone1.png",
+  "/images/phone2.svg",
+  "/images/phone3.svg",
+  "/images/phone4.svg",
 ];
 
 const loadingState = [1, 2, 3, 4, 5, 6, 7, 8];

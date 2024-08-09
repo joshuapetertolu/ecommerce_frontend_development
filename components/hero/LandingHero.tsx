@@ -69,7 +69,7 @@ function LandingHero() {
                 width={1200}
                 height={1200}
                 src="/images/farmer.png"
-                alt="procurement"
+                alt="Phonix"
                 // className="w-8 h-80"
               />
             </div>

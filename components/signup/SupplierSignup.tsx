@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import ProcurmentInputField from "@/components/Inputs/ProcurmentInputField";
-import ProcurementSelectInputField from "@/components/Inputs/ProcurementSelectInputField";
+import PhonixSelectInputField from "@/components/Inputs/PhonixSelectInputField";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { states } from "@/utils/constants/constants";
@@ -99,7 +99,7 @@ function SupplierSignup() {
                 touched={touched.businessName}
                 required
               />
-              <ProcurementSelectInputField
+              <PhonixSelectInputField
                 label="State"
                 data={states}
                 placeholder="Select State"
@@ -169,7 +169,7 @@ function SupplierSignup() {
                 required
               />
 
-              <ProcurementSelectInputField
+              <PhonixSelectInputField
                 label="Is your business CAC registered "
                 data={["Yes", "No"]}
                 placeholder="Select"
@@ -183,7 +183,7 @@ function SupplierSignup() {
                 required
               />
 
-              <ProcurementSelectInputField
+              <PhonixSelectInputField
                 label="Select product categories you are interested in"
                 data={states}
                 placeholder="Select"
@@ -214,7 +214,7 @@ function SupplierSignup() {
               <div>
                 <input type="checkbox" className="mr-5" />
                 <span className="text-xs text-grayLight">
-                  I have read and agree to Procurement's of Use and Privacy
+                  I have read and agree to Phonix's of Use and Privacy
                   policy .
                 </span>
               </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins, DM_Sans } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -13,8 +14,8 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Procurement App",
-  description: "Procurement App",
+  title: "Phonix App",
+  description: "Phonix App",
 };
 
 export default function RootLayout({
@@ -25,6 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={dmSans.className}>{children}</body>
+      <Toaster/>
     </html>
   );
 }

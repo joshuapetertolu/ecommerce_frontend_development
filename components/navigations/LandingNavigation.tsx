@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { Fragment, useState } from "react";
@@ -18,11 +19,20 @@ import { RiMenu2Line, RiMenu3Fill } from "react-icons/ri";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import LoginModal from "../modals/LoginModal";
+import { FaCartArrowDown } from "react-icons/fa6";
+import CartModal from "../hero/cartModal";
+
 
 function LandingNavigation() {
   const { push } = useRouter();
   const [loggedIn, setLoggedIn] = useState(false);
   const [loginUser, setLoginUser] = useState(false);
+  const [viewCart, setViewCart] = useState(false)
+   const [open, setOpen] = useState(false);
+
+   const handleClose = () => {
+     setOpen(false);
+   };
   const user = {
     name: "Chelsea Hagon",
     email: "chelsea.hagon@example.com",
@@ -47,57 +57,59 @@ function LandingNavigation() {
 
   const categories = [
     {
-      name: "Electronics",
+      name: "Smartphones",
       href: "/category/electronics",
       imageSrc:
         "https://tailwindui.com/img/ecommerce-images/mega-menu-category-01.jpg",
-      imageAlt: "Headphones",
+      imageAlt: "Smartphones",
     },
     {
-      name: "Books",
+      name: "Featured",
       href: "/category/books",
       imageSrc:
         "https://tailwindui.com/img/ecommerce-images/mega-menu-category-02.jpg",
-      imageAlt: "Books",
+      imageAlt: "Featured",
     },
     {
-      name: "Home & Garden",
+      name: "Gaming",
       href: "/category/home-and-garden",
       imageSrc:
         "https://tailwindui.com/img/ecommerce-images/mega-menu-category-03.jpg",
-      imageAlt:
-        "Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug.",
+      imageAlt: "Gaming",
     },
     {
-      name: "Beauty",
+      name: "Foldable",
       href: "/category/beauty",
       imageSrc:
         "https://tailwindui.com/img/ecommerce-images/mega-menu-category-04.jpg",
-      imageAlt:
-        "Bottle of perfume on white marble table next to tropical leaf.",
+      imageAlt: "Foldable",
     },
     {
-      name: "Jewelry",
+      name: "Camera",
       href: "/category/jewelry",
       imageSrc:
         "https://tailwindui.com/img/ecommerce-images/mega-menu-category-05.jpg",
-      imageAlt: "Gold bracelet with emerald and diamond gemstones.",
+      imageAlt: "Camera",
     },
     {
-      name: "Outdoors",
+      name: "Business",
       href: "/category/outdoors",
       imageSrc:
         "https://tailwindui.com/img/ecommerce-images/mega-menu-category-06.jpg",
-      imageAlt: "Patagonia Torres del Paine treck",
+      imageAlt: "Business",
     },
     {
-      name: "Clothing",
+      name: "5G Phones",
       href: "/category/clothing",
       imageSrc:
         "https://tailwindui.com/img/ecommerce-images/mega-menu-category-07.jpg",
-      imageAlt: "Model",
+      imageAlt: "5G Phones",
     },
   ];
+
+  let yes = false
+
+
 
   return (
     <Popover
@@ -116,6 +128,12 @@ function LandingNavigation() {
               show={loginUser}
               close={() => setLoginUser(!loginUser)}
             />
+
+            <CartModal
+              open={viewCart}
+              setOpen={setViewCart}
+              onClose={() => setViewCart(false)}
+            />
           </div>
 
           <div>
@@ -124,10 +142,10 @@ function LandingNavigation() {
                 <div className="flex flex-shrink-0 items-center">
                   <a href="/">
                     <Image
-                      src="/procurement-logo.svg"
+                      src="/Phonix-logo.svg"
                       width={50}
                       height={50}
-                      alt="procurement logo"
+                      alt="Phonix logo"
                       className="block h-8 w-auto"
                     />
                   </a>
@@ -156,7 +174,6 @@ function LandingNavigation() {
                                 <MenuItem key={item.name}>
                                   {({ active }) => (
                                     <div
-                                      onClick={() => push(item.href)}
                                       className={classNames(
                                         active ? "bg-gray-100" : "",
                                         "block px-4 py-2 text-sm text-gray-700 cursor-pointer"
@@ -172,12 +189,6 @@ function LandingNavigation() {
                         </Menu>
                       </span>
                     </div>
-                    <p
-                      onClick={() => push("/suppliers")}
-                      className="cursor-pointer"
-                    >
-                      For Suppliers
-                    </p>
                   </div>
                 </div>
               </div>
@@ -199,7 +210,7 @@ function LandingNavigation() {
                       <input
                         id="search"
                         name="search"
-                        className="block w-[500px] rounded-md border-0 bg-[#EFEFEF] py-1.5 pl-10 pr-3 text-gray-900 placeholder:text-gray-400 focus:ring-[#EFEFEF] focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
+                        className="block w-[450px] rounded-md border-0 bg-[#EFEFEF] py-1.5 pl-10 pr-3 text-gray-900 placeholder:text-gray-400 focus:ring-[#EFEFEF] focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
                         placeholder="Search for products"
                         type="search"
                       />
@@ -224,12 +235,23 @@ function LandingNavigation() {
                   )}
                 </PopoverButton>
               </div>
-              <div
-                onClick={() => setLoginUser(true)}
-                className=" hidden cursor-pointer lg:flex lg:items-center lg:justify-end xl:col-span-4"
-              >
+
+              <div className=" hidden cursor-pointer lg:flex lg:items-center lg:justify-end xl:col-span-4">
                 {/* Profile dropdown */}
-                <div className="flex items-center lg:ml-8 space-x-4 ">
+                <div
+                  onClick={() => {
+                    setViewCart(!viewCart);
+                  }}
+                >
+                  <FaCartArrowDown
+                    className="h-10 w-10 p-2 rounded-full  bg-[#D9D9D9] text-gray-400"
+                    aria-hidden="true"
+                  />
+                </div>
+                <div
+                  onClick={() => setLoginUser(true)}
+                  className="flex items-center lg:ml-8 space-x-4 "
+                >
                   <CiUser
                     className="h-10 w-10 p-2 rounded-full  bg-[#D9D9D9] text-gray-400"
                     aria-hidden="true"

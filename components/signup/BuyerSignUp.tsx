@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import ProcurmentInputField from "@/components/Inputs/ProcurmentInputField";
-import ProcurementSelectInputField from "@/components/Inputs/ProcurementSelectInputField";
+import PhonixSelectInputField from "@/components/Inputs/PhonixSelectInputField";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { states } from "@/utils/constants/constants";

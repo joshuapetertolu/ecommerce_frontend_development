@@ -23,6 +23,7 @@ function SponsoredProduct({ title }: SponsoredProductProps) {
         </div>
       </div>
       {[0, 1, 2, 3].map((item) => (
+        // eslint-disable-next-line react/jsx-key
         <motion.div
           whileHover={{
             scale: 1.02,
@@ -30,9 +31,9 @@ function SponsoredProduct({ title }: SponsoredProductProps) {
           className="cursor-pointer"
           onClick={() => setShowProduct(true)}
         >
-          <div className=" flex justify-between items-center space-x-2">
+          <div className=" flex gap-1 items-center space-x-2">
             <Image
-              src="/images/oil.svg"
+              src="/images/phones.png"
               alt="hero"
               width={100}
               height={100}
@@ -40,10 +41,10 @@ function SponsoredProduct({ title }: SponsoredProductProps) {
             />
 
             <div className="text-xs">
-              <p>Oils</p>
-              <p className="my-2">Premium fresh palm oil </p>
+              <p> Smartphone</p>
+              <p className="my-2">Price: 599.99</p>
               <p className="underline text-green-500 cursor-pointer">
-                Request for quote
+                View details
               </p>
             </div>
           </div>
